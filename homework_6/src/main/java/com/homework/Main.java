@@ -578,6 +578,8 @@ public class Main {
     static int sumBetweenB(int m, int n) {
         return (n - 1 - (m + 1) + 1) * (m + 1 + n - 1) / 2;
     }
+int[] a= {};
+
 
     static void getsumBetween() {
         while (true) {
@@ -604,7 +606,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-
+   
         while (true) {
             String[] options = {
                     " Tergil 5", " Tergil 6", " Tergil 7a", " Tergil 7b", " Tergil 8 or mvn test", " Tergil 9",
