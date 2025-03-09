@@ -19,9 +19,9 @@ public class Main {
     static String enterStr(String t) {
 
         System.out.println(t);
-        
+
         String s = scanner.next();
-        
+
         return s;
     }
 
@@ -154,10 +154,10 @@ public class Main {
     }
 
     static void isAnaram(String x, String y) {
-        
+
         x = x.toLowerCase().replaceAll("\\s+", "");
         y = y.toLowerCase().replaceAll("\\s+", "");
-    
+
         if (x.length() != y.length()) {
             System.out.println("Strings are not anagrams");
             return;
@@ -181,6 +181,38 @@ public class Main {
         boolean areEqual = Arrays.equals(arr_x, arr_y);
         System.out.println((areEqual ? "Strings are anagrams" : "Strings are not anagrams"));
 
+    }
+
+    static String substring(String s, int x, int y) {
+        if (x > s.length()) {
+            return "Error: Ending cut point cannot be greater than the string length.";
+
+        }
+        String newstr = "";
+        for (int i = x; i < y; i++) {
+            newstr += s.charAt(i);
+
+        }
+        return newstr;
+    }
+
+    static String compress(String s) {
+        int sum = 0;
+        String newstr = "";
+        for (int i = 0; i < s.length(); i++) {
+
+            for (int j = i; j< s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    sum++;
+                } else {
+                    break;
+                }
+            }
+            newstr += s.charAt(i) + String.valueOf(sum);
+            i += sum - 1;
+            sum = 0;
+        }
+        return newstr.length() < s.length() ? newstr : s;
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -226,22 +258,23 @@ public class Main {
                     System.out.println("result: " + numberOfApperence(
                             enterStr("Enter a string in which you would like to search for a sequence of characters."),
                             enterStr("Enter a sequence of characters to search for in a string.")));
-
                     break;
                 case 6:
                     System.out.println("Enter words with a space.");
                     reverseWord(enterStrLine(str1));
-
                     break;
                 case 7:
                     System.out.println(isPolindrom(enterStr(str1)));
                     break;
                 case 8:
-                isAnaram(enterStrLine("Enter first string"),enterStrLine("Enter second string"));
+                    isAnaram(enterStrLine("Enter first string"), enterStrLine("Enter second string"));
                     break;
                 case 9:
+                    System.out.println(substring(enterStr(str1), enterNumber("Starting cut point"),
+                            enterNumber("Ending cut point")));
                     break;
                 case 10:
+                    System.out.println(compress(enterStr(str1)));
                     break;
                 case 11:
                     break;

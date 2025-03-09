@@ -96,6 +96,7 @@ public class MainTest {
             throw e;
         }
     }
+
     @Test
     void testNumberOfApperenceRegularCase() {
         try {
@@ -108,6 +109,7 @@ public class MainTest {
             throw e;
         }
     }
+
     @Test
     void testReverseWord() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -151,6 +153,7 @@ public class MainTest {
             throw e;
         }
     }
+
     @Test
     void testIsAnaram_True() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -159,7 +162,7 @@ public class MainTest {
 
         try {
             Main.isAnaram("listen", "S ilent");
-            String expectedOutput = "Strings are anagrams";  
+            String expectedOutput = "Strings are anagrams";
             assertEquals(expectedOutput, baos.toString().trim(), "The strings should be anagrams");
 
             System.out.println("✔ testIsAnaram (True) passed");
@@ -177,12 +180,65 @@ public class MainTest {
 
         try {
             Main.isAnaram("hello", "world");
-            String expectedOutput = "Strings are not anagrams"; 
+            String expectedOutput = "Strings are not anagrams";
             assertEquals(expectedOutput, baos.toString().trim(), "The strings should not be anagrams");
 
             System.out.println("✔ testIsAnaram (False) passed");
         } catch (AssertionError e) {
             System.out.println("✘ testIsAnaram (False) failed");
+            throw e;
+        }
+    }
+
+    @Test
+    void testSubstring_ValidRange() {
+        try {
+            String result = Main.substring("Hello, World!", 7, 12);
+            assertEquals("World", result, "Expected 'World'");
+
+            System.out.println("✔ testSubstring_ValidRange passed");
+        } catch (AssertionError e) {
+            System.out.println("✘ testSubstring_ValidRange failed");
+            throw e;
+        }
+    }
+
+    @Test
+    void testSubstring_OutOfBounds() {
+        try {
+            String result = Main.substring("Hello", 10, 15);
+            assertEquals("Error: Ending cut point cannot be greater than the string length.", result,
+                    "Expected error message");
+
+            System.out.println("✔ testSubstring_OutOfBounds passed");
+        } catch (AssertionError e) {
+            System.out.println("✘ testSubstring_OutOfBounds failed");
+            throw e;
+        }
+    }
+
+    @Test
+    void testCompress_RepeatedCharacters() {
+        try {
+            String result = Main.compress("aaaabbbbccccc");
+            assertEquals("a4b4c5", result, "Expected 'a4b4c5'");
+
+            System.out.println("✔ testCompress_RepeatedCharacters passed");
+        } catch (AssertionError e) {
+            System.out.println("✘ testCompress_RepeatedCharacters failed");
+            throw e;
+        }
+    }
+
+    @Test
+    void testCompress_NoCompressionNeeded() {
+        try {
+            String result = Main.compress("hello");
+            assertEquals("hello", result, "Expected 'hello'");
+
+            System.out.println("✔ testCompress_NoCompressionNeeded passed");
+        } catch (AssertionError e) {
+            System.out.println("✘ testCompress_NoCompressionNeeded failed");
             throw e;
         }
     }
