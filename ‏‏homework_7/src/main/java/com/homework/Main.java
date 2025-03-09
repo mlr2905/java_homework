@@ -221,7 +221,7 @@ public class Main {
             String[] options = {
                     " Tergil 6", " Tergil 7a", " Tergil 7b", " Tergil 8", " Tergil 9",
                     " Tergil 10", " Tergil 11", " Tergil 12", " Tergil 13",
-                    " Tergil 14a", " Tergil 14b"
+                    " Tergil 14a"
             };
 
             System.out.println("\n Select an option from the menu:\n");
@@ -275,20 +275,6 @@ public class Main {
                     break;
                 case 10:
                     System.out.println(compress(enterStr(str1)));
-                    break;
-                case 11:
-                    break;
-                case 12:
-                    break;
-                case 13:
-
-                    break;
-                case 14:
-
-                    break;
-                case 15:
-                    break;
-                case 16:
                     break;
                 default:
                     break;
