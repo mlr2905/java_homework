@@ -221,7 +221,7 @@ public class Main {
             String[] options = {
                     " Tergil 6", " Tergil 7a", " Tergil 7b", " Tergil 8", " Tergil 9",
                     " Tergil 10", " Tergil 11", " Tergil 12", " Tergil 13",
-                    " Tergil 14a"
+                    " Tergil 14"
             };
 
             System.out.println("\n Select an option from the menu:\n");
