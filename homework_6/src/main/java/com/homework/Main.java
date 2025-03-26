@@ -124,7 +124,6 @@ public class Main {
 
     static boolean testSumNumbersInString() {
         boolean allTestsPassed = true;
-        int maxInt = Integer.MAX_VALUE;
         int result;
 
         String input1 = "abc123def456ghi789";

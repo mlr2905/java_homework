@@ -12,14 +12,6 @@ public class Main {
     static int[] numArrCh = { 5, 8, 3, 9, 7 };
     static boolean isRunning = true;
 
-    static String enterStrLine(String t) {
-
-        System.out.println(t);
-        String s = scanner.nextLine();
-
-        return s;
-    }
-
     static String enterStr(String t) {
 
         System.out.println(t);
@@ -253,8 +245,7 @@ public class Main {
 
             int type = scanner.nextInt();
             scanner.nextLine();
-            String str1 = "Enter a string";
-            String str2 = "Enter your name";
+         
 
             switch (type) {
                 case 1:
