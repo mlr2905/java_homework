@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    static int[][] m = {
+        {444, 444},
+        {555, 44}
+    };
+       
     static Scanner scanner = new Scanner(System.in);
     static int arrLength = 10;
     static int[] arr = new int[arrLength];
@@ -184,6 +189,7 @@ public class Main {
 
     public static int findDuplicate(int[] arr) {
         Arrays.sort(arr);
+        
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] == arr[i - 1]) {
                 return arr[i];
