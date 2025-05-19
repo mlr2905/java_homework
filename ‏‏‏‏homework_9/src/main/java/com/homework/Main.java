@@ -222,7 +222,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(Arrays.toString(reverse_1(new int[] { 1, 2, 3, 4, 5, 6 })));
         while (isRunning) {
             String[] options = {
                     " Tergil 5 A", " Tergil 5 B", " Tergil 5 C", " Tergil 6", " Tergil 7 A.B.C",
